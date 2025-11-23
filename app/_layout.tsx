@@ -53,10 +53,11 @@ function RootLayoutNav() {
     <GluestackUIProvider mode={theme}>
       <ThemeProvider value={theme === "dark" ? DarkTheme : DefaultTheme}>
         <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Protected guard={!!accessToken}>
+          <Stack.Protected guard={Boolean(accessToken)}>
             <Stack.Screen name="(tabs)" />
           </Stack.Protected>
           <Stack.Protected guard={!accessToken}>
+            <Stack.Screen name="index" />
             <Stack.Screen name="SignIn" />
             <Stack.Screen name="SignUp" />
           </Stack.Protected>
