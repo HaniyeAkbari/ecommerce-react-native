@@ -1,19 +1,27 @@
 import React from "react";
 import { Box } from "@/components/ui/box";
-import { Text } from "@/components/ui/text";
 import { Button, ButtonText } from "@/components/ui/button";
 import { useRouter } from "expo-router";
+import { Text } from "@/components/ui/text";
 
 export default function Home() {
   const router = useRouter();
   return (
-    <Box className="flex-1 h-screen  py-safe px-safe ">
-      <Button onPress={() => router.push("/SignIn")}>
-        <ButtonText>log in</ButtonText>
-      </Button>
-      <Button onPress={() => router.push("/SignUp")}>
-        <ButtonText>sign up</ButtonText>
-      </Button>
+    <Box className="flex-1 h-screen justify-end  py-safe px-safe ">
+      <Box className=" mb-10 flex-row justify-center gap-3 ">
+        <Button
+          className="w-32 rounded-xl"
+          onPress={() => router.push("/SignIn")}
+        >
+          <ButtonText className="capitalize">log in</ButtonText>
+        </Button>
+        <Button
+          className="w-32 rounded-xl"
+          onPress={() => router.push("/SignUp")}
+        >
+          <ButtonText className="capitalize">sign up</ButtonText>
+        </Button>
+      </Box>
     </Box>
   );
 }
